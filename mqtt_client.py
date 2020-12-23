@@ -99,7 +99,7 @@ class MQTT_Hassio():
         elif ('set_scenario' in str(topic)):
             print('Incoming MQTT set_scenario request : ', topic, payload)
             get_id = (topic.split("/"))[2] #extract id from mqtt
-               print(str(get_id), 'run scenario')
+            print(str(get_id), 'run scenario')
             if not self.tydom.connection.open:
                print('Websocket not opened, reconnect...')
                await self.tydom.connect()
@@ -114,7 +114,6 @@ class MQTT_Hassio():
         #         print('Websocket not opened, reconnect...')
         #         await self.tydom.connect()
         #         await self.tydom.put_devices_data(str(get_id), 'position', str(json.loads(payload)))
-
         #     else:
         #         await self.tydom.put_devices_data(str(get_id), 'position', str(json.loads(payload)))
         
